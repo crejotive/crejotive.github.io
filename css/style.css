@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'ceramic';
+    src: url('ceramic-webfont.eot');
+    src: url('ceramic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ceramic-webfont.woff') format('woff'),
+         url('ceramic-webfont.ttf') format('truetype'),
+         url('ceramic-webfont.svg#ceramicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gridshift';
+    src: url('gridshift-webfont.eot');
+    src: url('gridshift-webfont.eot?#iefix') format('embedded-opentype'),
+         url('gridshift-webfont.woff') format('woff'),
+         url('gridshift-webfont.ttf') format('truetype'),
+         url('gridshift-webfont.svg#gridshiftregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'brokensquares';
+    src: url('broken_squares-webfont.eot');
+    src: url('broken_squares-webfont.eot?#iefix') format('embedded-opentype'),
+         url('broken_squares-webfont.woff') format('woff'),
+         url('broken_squares-webfont.ttf') format('truetype'),
+         url('broken_squares-webfont.svg#broken_squaresregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*@font-face {
+    font-family: 'gridshift';
+    src: url('gridshift.otf') format('opentype'),
+         url('gridshift.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'ceramic';
+    src: url('CERAMIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'brokensquares';
+    src: url('BrokenSquares.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }*/
+
+html {
+	background:white;
+}
+body {
+  font-family: Arial;
+	max-width: 1000px;
+	min-height: 1000px;
+	margin:auto;
+	background:lightgrey;
+	border-left:2px dotted grey;
+	border-right:2px dotted grey;
+}
+
+.title {
+	text-align: center;
+	font-size:5em;
+	font-family: 'ceramic', 'gridshift', 'brokensquares', Arial;
+}
+.t2 {
+	font-family: 'gridshift', Arial;
+}
+.t, .t1 {
+	font-family: 'brokensquares', Arial;
+}
+
+
+
+.creations {
+	text-align: center;
+	margin:auto;
+	padding:1em;
+        /*overflow:auto;*/
+        /*white-space: nowrap;*/
+}
+.creations div {
+  display:inline-block;
+  zoom: 1;
+  *display: inline;
+}
+.thumbs {
+	background:#BDC79B;
+	padding:10px;
+	border-radius:5px;
+}
+
+.creations img {
+	border-radius:15px;
+	border:1px solid white;
+	opacity:0.5;
+	-webkit-transition: opacity .5s, border .5s;
+	-moz-transition: opacity .5s, border .5s;
+	-o-transition: opacity .5s, border .5s;
+	transition: opacity .5s, border .5s;
+	box-shadow: 0 0 1em grey;	
+}
+
+.creations img:hover, .creations img.selected {
+	opacity:1;
+	box-shadow: 0 0 1em gold;
+}
+
+
+.del {
+  position:absolute;
+  /*margin:10px;*/
+  font-weight: bold;
+  background-color:white;
+}
+
+.thumbs .imgdiv {
+	border-radius:25px;
+	border:2px solid white;
+        text-align:center;
+}
+#thumbadd {
+        text-align:center;
+}
+.thumbs img {
+	border-radius:25px;
+	margin-bottom:-4px;
+        -webkit-object-fit: contain;
+        -o-object-fit: contain;
+        object-fit: contain;
+}
+#pic {
+	box-shadow: 0 0 4px white;
+	border-radius:5px;
+}
+.thumbs .imgdiv:nth-child(even) {margin-left:50px}
+.thumbs .imgdiv:nth-child(odd) {margin-right:50px}
+.dim::before {content:"Dimensions: "}
+
+#creadd {
+  vertical-align:top;
+  display:inline-block;
+  text-align:center;
+  border-radius:25px;
+  border:1px solid white;
+}
+#creadd, #thumbadd {
+  width:100px;
+  height:100px;
+  font-size:90px;
+  cursor:pointer;
+  color:grey;
+}
+
+.forsale::before, .sold::before { 
+  background: #BAD0C2;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  color: black;
+  display: table;
+  font-size: 0.8em;
+  font-weight: 700;
+  padding: 0px 0.25em;
+  position: relative;
+  transform: rotate(25deg);
+  -ms-transform:rotate(25deg); /* IE 9 */
+  -webkit-transform:rotate(25deg); /* Safari and Chrome */
+  width: auto;
+  z-index:5;
+}
+
+.forsale::before { 
+  content: "for sale";
+  margin: -1em 0em auto auto;
+  top: 2em;
+}
+
+.sold::before { 
+  content: "sold";
+  margin: -1em -.2em auto auto;
+  top: 1.6em;
+}
+
+.lt-ie7 body {
+	width: 1000px;
+}
+.lt-ie7 .creations {
+	width: 1000px;
+        height:120px;
+}
