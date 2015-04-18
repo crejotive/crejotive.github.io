@@ -3,7 +3,7 @@
         {% for page in site.pages | sort:"path" %}
           {% if page.path contains 'creations/' %}
           {% else %}
-          <div class="thumbsdiv {{ page.forsale }}"><a href="{{ page.url | prepend: site.baseurl |  replace: 'index.html' ,'' }}"><img src="{{ site.baseurl }}{{ page.url  |  replace: 'index.html' ,'' }}thumbnails/{% if page.thumb %}{{ page.thumb }}{% else %}img0.jpg{% endif %}" width="100" height="100"></a></div>
+          <{{ page.url}}
           {% endif %}
         {% endfor %}
 
