@@ -3,7 +3,7 @@
         {% for page in site.pages | sort:"path" %}
           {% if page.path contains 'creations/' %}
           {% else %}
-          <{{ page.url}}
+          {{ page.url}}
           {% endif %}
         {% endfor %}
 
