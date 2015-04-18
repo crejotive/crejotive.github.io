@@ -16,7 +16,7 @@ permalink: /:path/
 <table><tbody><tr><td style="padding:10px;padding-right:5px;vertical-align:top;">
 <div class="thumbs" style="float:left">
 {% for i in (0..20) %}
-{% capture img_path %}{{ page.url }}thumbnails/img{{ i }}.jpg{% endcapture %}
+{% capture img_path %}{{ page.url  |  replace: 'index.html' ,'' }}thumbnails/img{{ i }}.jpg{% endcapture %}
 {% for static_file in site.static_files %}
   {% if static_file.path == img_path %}
 
