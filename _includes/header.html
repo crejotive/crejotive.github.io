@@ -1,18 +1,5 @@
 <div class="title">cre<span class="t">-</span>Jo<span class="t">-</span>tive</div>
 
-        {% for page in site.pages | sort:"path" %}
-          {% if page.path contains 'creations/' %}
-          {% else %}
-          <a href="{{ page.url}}">{{page.title}}</a> - 
-          {% endif %}
-        {% endfor %}
+{% include navbar.html %}
 
-<div class="creations">
-        {% for page in site.pages | sort:"path" %}
-          {% if page.path contains 'creations/' %}
-          <div class="thumbsdiv {{ page.forsale }}"><a href="{{ page.url | prepend: site.baseurl |  replace: 'index.html' ,'' }}"><img src="{{ site.baseurl }}{{ page.url  |  replace: 'index.html' ,'' }}thumbnails/{% if page.thumb %}{{ page.thumb }}{% else %}img0.jpg{% endif %}" width="100" height="100"></a></div>
-          {% endif %}
-        {% endfor %}
-
-</div>
-
+{% include creationlist.html %}
