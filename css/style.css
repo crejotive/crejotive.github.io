@@ -73,6 +73,10 @@ body {
 .t, .t1 {
 	font-family: 'brokensquares', Arial;
 }
+.title a {
+	text-decoration: none;
+	color: inherit;
+}
 
 
 

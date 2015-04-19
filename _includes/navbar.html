@@ -2,7 +2,7 @@
 {% for page in site.pages | sort:"path" %}
   {% if page.path contains 'creations/' %}
   {% else %}
-  <li><a href="{{ page.url }}">{{page.title}}</a></li>
+  <li><a href="{{ page.url | replace: 'index.html','' }}">{{page.title}}</a></li>
   {% endif %}
 {% endfor %}
 </ul></nav>

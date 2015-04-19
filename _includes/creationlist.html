@@ -1,8 +1,8 @@
 
 <div class="creations">
-        {% for page in site.pages | sort:"path" %}
-          {% if page.path contains 'creations/' %}
-          <div class="thumbsdiv {{ page.forsale }}"><a href="{{ page.url | prepend: site.baseurl |  replace: 'index.html' ,'' }}"><img src="{{ site.baseurl }}{{ page.url  |  replace: 'index.html' ,'' }}thumbnails/{% if page.thumb %}{{ page.thumb }}{% else %}img0.jpg{% endif %}" width="100" height="100"></a></div>
+        {% for p in site.pages | sort:"path" %}
+          {% if p.path contains 'creations/' %}
+          <div class="thumbsdiv {{ p.forsale }}"><a href="{{ p.url | prepend: site.baseurl |  replace: 'index.html' ,'' }}"><img {%if page.url == p.url %}class="selected"{%endif%} src="{{ site.baseurl }}{{ p.url  |  replace: 'index.html' ,'' }}thumbnails/{% if p.thumb %}{{ p.thumb }}{% else %}img0.jpg{% endif %}" width="100" height="100"></a></div>
           {% endif %}
         {% endfor %}
 
