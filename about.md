@@ -1,5 +1,5 @@
 ---
-layout: notcreation
+layout: default
 title: About
 ---
 
