@@ -5,8 +5,21 @@ description: > # this means to ignore newlines until "baseurl:"
 #url: "http://leunen.me" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://crejotive.com" # the base hostname & protocol for your site
+destination: /srv/data/jo/web
 
 permalink: /:path/:basename
 
 # Build settings
 markdown: kramdown
+
+image:
+  output: thumbnails
+  presets:
+    users:
+      attr:
+        class: user-portrait
+        itemprop: image
+      width: 350
+    half:
+      width: 400
+      height: 400

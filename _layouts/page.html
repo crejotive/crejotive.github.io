@@ -17,13 +17,23 @@ layout: default
 <div class="thumbs" style="float:left">
 {% for i in (0..20) %}
 {% capture img_path %}{{ page.url  |  replace: 'index.html' ,'' }}thumbnails/img{{ i }}.jpg{% endcapture %}
+{% capture big_img_path %}{{ page.url  |  replace: 'index.html' ,'' }}img{{ i }}.jpg{% endcapture %}
+{% assign found = 'false' %}
+{% assign foundBig = 'false' %}
 {% for static_file in site.static_files %}
+  {% if static_file.path == big_img_path %}
+    {% assign foundBig = 'true' %}
+  {% endif %}
   {% if static_file.path == img_path %}
-
-<div class="imgdiv"><a href="#"><img src="thumbnails/img{{ i }}.jpg" data-name="img{{ i }}.jpg" width="100" height="100" onclick="javascript:event.preventDefault ? event.preventDefault() : event.returnValue = false;document.getElementById('pic').src=this.getAttribute('data-name');"></a></div>
-
+    {% assign found = 'true' %}
+    <div class="imgdiv"><a href="#"><img src="thumbnails/img{{ i }}.jpg" data-name="img{{ i }}.jpg" width="100" height="100" onclick="javascript:event.preventDefault ? event.preventDefault() : event.returnValue = false;document.getElementById('pic').src=this.getAttribute('data-name');"></a></div>
   {% endif %}
 {% endfor %}
+{% if found == 'false' %}
+  {% if foundBig == 'true' %}
+    <div class="imgdiv"><a href="#">{% image 100x100 {{big_img_path}} data-name="img{{ i }}.jpg" width="100" height="100" onclick="javascript:event.preventDefault ? event.preventDefault() : event.returnValue = false;document.getElementById('pic').src=this.getAttribute('data-name');" %}</a></div>
+  {% endif %}
+{% endif %}
 
 {% endfor %}
 </div></td>
